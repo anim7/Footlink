@@ -57,21 +57,21 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
-      name: "FutNFT",
+      name: "Footlink",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FutNFT__factory>;
+    ): Promise<Contracts.Footlink__factory>;
     getContractFactory(
-      name: "FutNFTMatch",
+      name: "FootlinkMatch",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FutNFTMatch__factory>;
+    ): Promise<Contracts.FootlinkMatch__factory>;
     getContractFactory(
-      name: "FutNFTTraining",
+      name: "FootlinkTraining",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FutNFTTraining__factory>;
+    ): Promise<Contracts.FootlinkTraining__factory>;
     getContractFactory(
-      name: "FutNFTTransfer",
+      name: "FootlinkTransfer",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FutNFTTransfer__factory>;
+    ): Promise<Contracts.FootlinkTransfer__factory>;
     getContractFactory(
       name: "VRFConsumer",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -133,25 +133,25 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165>;
     getContractAt(
-      name: "FutNFT",
+      name: "Footlink",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.FutNFT>;
+    ): Promise<Contracts.Footlink>;
     getContractAt(
-      name: "FutNFTMatch",
+      name: "FootlinkMatch",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.FutNFTMatch>;
+    ): Promise<Contracts.FootlinkMatch>;
     getContractAt(
-      name: "FutNFTTraining",
+      name: "FootlinkTraining",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.FutNFTTraining>;
+    ): Promise<Contracts.FootlinkTraining>;
     getContractAt(
-      name: "FutNFTTransfer",
+      name: "FootlinkTransfer",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.FutNFTTransfer>;
+    ): Promise<Contracts.FootlinkTransfer>;
     getContractAt(
       name: "VRFConsumer",
       address: string,

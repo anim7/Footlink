@@ -90,7 +90,6 @@ export interface FutNFTMatchInterface extends utils.Interface {
     "getPlayersByOwner(address)": FunctionFragment;
     "getPositionsFromFormation(string)": FunctionFragment;
     "getRandomNumber()": FunctionFragment;
-    "getTeamRating(address)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "levelPercentNoPosition()": FunctionFragment;
     "levelPercentSuitablePosition()": FunctionFragment;
@@ -209,10 +208,6 @@ export interface FutNFTMatchInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "getRandomNumber",
     values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getTeamRating",
-    values: [string]
   ): string;
   encodeFunctionData(
     functionFragment: "isApprovedForAll",
@@ -423,10 +418,6 @@ export interface FutNFTMatchInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "getRandomNumber",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getTeamRating",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -732,11 +723,6 @@ export interface FutNFTMatch extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    getTeamRating(
-      _owner: string,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
-
     isApprovedForAll(
       owner: string,
       operator: string,
@@ -1024,8 +1010,6 @@ export interface FutNFTMatch extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  getTeamRating(_owner: string, overrides?: CallOverrides): Promise<BigNumber>;
-
   isApprovedForAll(
     owner: string,
     operator: string,
@@ -1295,11 +1279,6 @@ export interface FutNFTMatch extends BaseContract {
     ): Promise<string[]>;
 
     getRandomNumber(overrides?: CallOverrides): Promise<string>;
-
-    getTeamRating(
-      _owner: string,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
 
     isApprovedForAll(
       owner: string,
@@ -1612,11 +1591,6 @@ export interface FutNFTMatch extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    getTeamRating(
-      _owner: string,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     isApprovedForAll(
       owner: string,
       operator: string,
@@ -1912,11 +1886,6 @@ export interface FutNFTMatch extends BaseContract {
 
     getRandomNumber(
       overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    getTeamRating(
-      _owner: string,
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     isApprovedForAll(

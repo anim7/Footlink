@@ -46,8 +46,10 @@
   "dependencies": {
     "@chainlink/contracts": "^0.4.0",
     "@openzeppelin/contracts": "^4.5.0",
+    "axios": "^0.26.1",
     "handlebars": "^4.7.7",
     "nft.storage": "^6.0.2",
-    "protobufjs": "^6.11.2"
+    "protobufjs": "^6.11.2",
+    "solc": "0.8.12"
   }
 }

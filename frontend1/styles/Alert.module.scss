@@ -1,0 +1,36 @@
+@import "mixins";
+
+.alertContainer {
+  @include flexContainer(space-between, center, row, nowrap);
+  position: sticky;
+  top: 3rem;
+  height: 3rem;
+  transition: 0.4s transform ease-out;
+  transform: translateY(-120%);
+  * {
+    font-size: 1.4rem;
+    height: 100%;
+  }
+  .left {
+    @include flexContainer(flex-start, center, row, nowrap);
+    width: 96%;
+    .symbol {
+      @include flexContainer(center, center, row, nowrap);
+      width: 4%;
+    }
+    .text {
+      font-size: 1.2rem;
+      @include flexContainer(center, center, row, nowrap);
+      margin-left: 1rem;
+    }
+  }
+  .right {
+    @include flexContainer(flex-end, center, row, nowrap);
+    width: 4%;
+    .close {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}

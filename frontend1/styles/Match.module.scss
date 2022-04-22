@@ -1,0 +1,110 @@
+@import "mixins";
+
+.matchContainer {
+  .selectLineup {
+    @include flexContainer(space-between, center, row, wrap);
+    background-color: rgb(26, 26, 26);
+    margin: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.01rem solid #007bff;
+    padding: 1rem;
+    .playground {
+      @include flexContainer(space-between, center, column, nowrap);
+      border-radius: 0.5rem;
+      width: 453px;
+      height: 675px;
+      background-image: url("/playground.jfif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 0 2rem;
+      padding-top: 5.3rem;
+      padding-bottom: 3.7rem;
+      .attack,
+      .midfield,
+      .defence,
+      .goalkeeper {
+        width: 100%;
+        @include flexContainer(space-between, center, row, nowrap);
+      }
+      .player {
+        margin: 0.5rem;
+        width: 3rem;
+        height: 4.2rem;
+        background-color: gray;
+      }
+    }
+    .settings {
+      @include flexContainer(flex-start, center, column, nowrap);
+      width: 57%;
+      height: 100vh;
+      border-left: 0.05rem solid white;
+      .level {
+        @include flexContainer(center, center, column, nowrap);
+        .shape {
+          background: blue;
+          width: 80px;
+          height: 80px;
+          position: relative;
+          text-align: center;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 80px;
+            background: blue;
+          }
+          &:before {
+            transform: rotate(30deg);
+          }
+          &:after {
+            transform: rotate(60deg);
+          }
+        }
+        .value {
+          font-size: 3.5rem;
+          position: relative;
+          bottom: 4.5rem;
+        }
+        .label {
+          position: relative;
+          bottom: 5rem;
+        }
+      }
+      .tag {
+        font-size: 1.5rem;
+      }
+      .formation {
+        width: 18rem;
+        font-size: 1.3rem;
+        padding: 0.2rem;
+        background-color: rgb(156, 0, 140);
+        border-radius: 0.4rem;
+        text-align: center;
+      }
+      .btn {
+        cursor: pointer;
+        padding: 0.2rem;
+        border-radius: 0.4rem;
+        font-size: 1.4rem;
+        margin-top: 4rem;
+        width: 18rem;
+        background-color: #007bff;
+        &:hover {
+          background-color: #00b3ff;
+        }
+      }
+      #playLabel {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+      }
+      #play {
+        margin-top: 0;
+      }
+    }
+  }
+}

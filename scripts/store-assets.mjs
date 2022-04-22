@@ -17,9 +17,13 @@ async function storeAsset() {
     level: 20,
     lastUpgrade: new Date().getTime(),
     suitablePositions: ["ST", "CAM", "CF", "RMF"],
-    image: new File([await fs.promises.readFile("assets/nft.png")], "nft.png", {
-      type: "image/png",
-    }),
+    image: new File(
+      [await fs.promises.readFile("assets/messi.png")],
+      "messi.png",
+      {
+        type: "image/png",
+      }
+    ),
   });
   console.log("Metadata stored on Filecoin and IPFS with URL:", metadata.url);
 }

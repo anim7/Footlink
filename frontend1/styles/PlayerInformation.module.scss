@@ -1,0 +1,60 @@
+@import "mixins";
+
+.playerInfoContainer {
+  @include flexContainer(center, center, column, nowrap);
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  background-color: rgba(26, 26, 26, 0.2);
+  width: 100%;
+  height: 100%;
+  .close {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+  }
+  .playerInfoContainerBox {
+    overflow-y: scroll;
+    transition: 0.3s opacity ease-out;
+    opacity: 0;
+    @include flexContainer(center, center, row, wrap);
+    z-index: 13;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 0, 41);
+    box-shadow: 0 0.5px 1px 0.5px rgb(255, 255, 255),
+      0.5px 0.75px 5px 0.5px rgb(255, 255, 255);
+    .image {
+    }
+    .info {
+      @include flexContainer(center, flex-start, column, nowrap);
+      margin: 1rem;
+      .group {
+        width: 100%;
+        margin-bottom: 0.7rem;
+        .label {
+          font-size: 1.2rem;
+          margin-bottom: 0.1rem;
+        }
+        .val {
+          font-size: 1.2rem;
+          background-color: rgb(64, 64, 64);
+          width: 100%;
+          padding: 0.2rem;
+          border-radius: 0.5rem;
+        }
+        .suitablePositions {
+          @include flexContainer(flex-start, center, row, wrap);
+          .position {
+            background-color: rgb(64, 64, 64);
+            font-size: 1.2rem;
+            margin: 0.15rem;
+            padding: 0.2rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

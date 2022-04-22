@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
-import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import "../node_modules/@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
 
 contract VRFConsumer is VRFConsumerBase {
-    bytes32 keyHash;
-    uint256 requiredFee;
+    bytes32 internal keyHash;
+    uint256 internal requiredFee;
     uint256 public randomResult;
 
     constructor()

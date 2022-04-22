@@ -1,0 +1,184 @@
+@import "mixins";
+
+.mintContainer {
+  @include flexContainer(center, center, row, nowrap);
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.2);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  .mintBox {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 20rem;
+    height: 35rem;
+    transition: 0.2s all ease-out;
+    transform: translateX(-270%);
+    background-color: rgb(0, 0, 41);
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #007bff;
+    @include flexContainer(flex-start, center, column, nowrap);
+    font-size: 1.4rem;
+    .headingContainer {
+      width: 100%;
+      @include flexContainer(space-between, center, row, nowrap);
+      .close {
+        font-size: 1.2rem;
+        position: relative;
+        bottom: 0.8rem;
+        cursor: pointer;
+      }
+    }
+    .body {
+      @include flexContainer(center, center, row, nowrap);
+      width: 200%;
+      .values {
+        transform: translateX(50%);
+        width: 50%;
+        @include flexContainer(center, center, column, nowrap);
+        .colors {
+          margin-bottom: 1rem;
+          width: 100%;
+          @include flexContainer(space-between, center, row, nowrap);
+          .color {
+            @include flexContainer(center, flex-start, column, nowrap);
+            width: 100%;
+            .colorInputBox {
+              @include flexContainer(center, center, row, nowrap);
+              .colorInput {
+                background-color: rgb(52, 52, 52);
+                border-top-left-radius: 0.4rem;
+                border-bottom-left-radius: 0.4rem;
+                cursor: pointer;
+                height: 2rem;
+                width: 2rem;
+                height: 2rem;
+              }
+              .colorText {
+                @include flexContainer(center, center, row, nowrap);
+                height: 2rem;
+                font-size: 1.2rem;
+                background-color: rgb(52, 52, 52);
+                padding: 0.1rem;
+                border-top-right-radius: 0.4rem;
+                border-bottom-right-radius: 0.4rem;
+              }
+            }
+          }
+        }
+        .group {
+          width: 100%;
+          @include flexContainer(center, flex-start, column, nowrap);
+          margin-bottom: 1rem;
+        }
+        .label {
+          font-size: 1.2rem;
+          align-self: flex-start;
+        }
+        .warning {
+          font-size: 0.7rem;
+          color: red;
+          display: none;
+        }
+        .input {
+          background-color: rgb(52, 52, 52);
+          padding: 0.2rem;
+          font-size: 1.3rem;
+          border-radius: 0.4rem;
+          width: 100%;
+          &:focus {
+            outline: none;
+          }
+        }
+        .suitablePositionsBox {
+          width: 100%;
+          @include flexContainer(center, center, row, nowrap);
+          input {
+            margin: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .addSuitablePosition {
+            font-size: 1.3rem;
+            @include flexContainer(center, center, row, nowrap);
+            padding: 0.2rem 0.7rem;
+            border-top-right-radius: 0.4rem;
+            border-bottom-right-radius: 0.4rem;
+            cursor: pointer;
+            background-color: #007bff;
+            &:hover {
+              background-color: #00b3ff;
+            }
+          }
+        }
+        .suitablePositions {
+          @include flexContainer(flex-start, center, row, wrap);
+          .suitablePositionAdded {
+            @include flexContainer(center, center, row, nowrap);
+            background-color: rgb(48, 48, 48);
+            margin: 0 0.2rem;
+            margin-top: 0.2rem;
+            padding: 0.1rem;
+            border-radius: 0.4rem;
+            p {
+              @include flexContainer(center, center, row, nowrap);
+              margin-right: 0.3rem;
+            }
+            button {
+              @include flexContainer(center, center, row, nowrap);
+              position: relative;
+              bottom: 0.1rem;
+              font-size: 1.2rem;
+              cursor: pointer;
+              &:hover {
+                color: darkgray;
+              }
+            }
+          }
+        }
+        #imageUpload {
+          font-size: 0.85rem;
+          padding: 0.4rem;
+        }
+        .submit {
+          width: 100%;
+          padding: 0.2rem;
+          font-size: 1.4rem;
+          border-radius: 0.4rem;
+          cursor: pointer;
+          background-color: #007bff;
+          &:hover {
+            background-color: #00b3ff;
+          }
+          &:disabled {
+            background-color: rgb(100, 100, 100);
+          }
+        }
+      }
+      .preview {
+        width: 50%;
+        @include flexContainer(flex-start, center, column, nowrap);
+        transform: translateX(100%);
+        .playerPreview {
+          margin-bottom: 1rem;
+        }
+        .submit {
+          width: 100%;
+          padding: 0.2rem;
+          font-size: 1.4rem;
+          border-radius: 0.4rem;
+          cursor: pointer;
+          background-color: #007bff;
+          &:hover {
+            background-color: #00b3ff;
+          }
+          &:disabled {
+            background-color: rgb(100, 100, 100);
+          }
+        }
+      }
+    }
+  }
+}

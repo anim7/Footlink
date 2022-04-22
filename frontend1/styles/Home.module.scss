@@ -1,0 +1,17 @@
+@import "mixins";
+
+.homeContainer {
+  .heading {
+    @include flexContainer(flex-end, flex-start, column, nowrap);
+    padding: 7rem;
+    height: 83vh;
+    .title {
+      font-size: 4rem;
+    }
+    .tagline {
+      font-size: 1.4rem;
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+  }
+}

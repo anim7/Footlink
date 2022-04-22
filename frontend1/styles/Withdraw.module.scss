@@ -1,0 +1,105 @@
+@import "mixins";
+
+.withdrawContainer {
+  @include flexContainer(center, center, row, nowrap);
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.2);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  .withdrawBox {
+    transition: 0.2s all ease-out;
+    transform: translateX(-200%);
+    background-color: rgb(0, 0, 41);
+    padding: 0.5rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #007bff;
+    @include flexContainer(center, center, column, nowrap);
+    font-size: 1.4rem;
+    .headingContainer {
+      width: 100%;
+      @include flexContainer(space-between, center, row, nowrap);
+      h2 {
+        position: relative;
+        left: 0.5rem;
+      }
+      .close {
+        font-size: 1.2rem;
+        position: relative;
+        bottom: 0.8rem;
+        cursor: pointer;
+      }
+    }
+    .balanceContainer {
+      @include flexContainer(center, center, column, nowrap);
+      margin: 0.5rem 0;
+      .balance {
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+    .setValue {
+      margin-top: 0.5rem;
+      @include flexContainer(space-between, center, row, nowrap);
+      .unitImg {
+        @include flexContainer(center, center, row, nowrap);
+        background-color: rgb(62, 62, 62);
+        height: 2rem;
+        padding: 0.2rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+      .withdrawValue {
+        background-color: rgb(62, 62, 62);
+        height: 2rem;
+        font-size: 1.2rem;
+        padding: 0.2rem;
+        &:focus {
+          outline: none;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+      .unit {
+        @include flexContainer(center, center, row, nowrap);
+        padding: 0.2rem;
+        background-color: rgb(62, 62, 62);
+        height: 2rem;
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+      }
+      .btn {
+        @include flexContainer(center, center, row, nowrap);
+        cursor: pointer;
+        background-color: #007bff;
+        font-size: 1.7rem;
+        height: 1.8rem;
+        width: 1.8rem;
+        margin: 0 0.5rem;
+        border-radius: 0.4rem;
+        &:hover {
+          background-color: #00b3ff;
+        }
+      }
+    }
+    .withdraw {
+      cursor: pointer;
+      background-color: #007bff;
+      margin-top: 0.5rem;
+      width: 70%;
+      font-size: 1.3rem;
+      border-radius: 0.4rem;
+      padding: 0.2rem;
+      &:hover {
+        background-color: #00b3ff;
+      }
+      &:disabled {
+        background-color: rgb(91, 91, 91);
+      }
+    }
+  }
+}

@@ -14,12 +14,12 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const FutNFT = await ethers.getContractFactory("FutNFTMatch");
-  const futnft = await FutNFT.deploy();
+  const Footlink = await ethers.getContractFactory("FootlinkMatch");
+  const footlink = await Footlink.deploy();
 
-  await futnft.deployed();
+  await footlink.deployed();
 
-  console.log("FutNFT project deployed to:", futnft.address);
+  console.log("FutNFT project deployed to:", footlink.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
